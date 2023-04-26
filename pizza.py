@@ -24,6 +24,27 @@ def cookgame ():
     toppings = ["cheese", "pepperoni","sausage"]
     order = random.choice(toppings)
     print(f"Your customer has ordered a {order} pizza!")
+    while True:
+        choice = input ('What pizza would you like to cook?')
+        if choice == order:
+            print (f"Correct! You've earned {Yi.wage} dollars!")
+            return Yi.wage
+        else: 
+            print ('Wrong! Try again.')
+
+def cashiergame ():
+    prices = ["8", "10" , "12"]
+    order = random.choice(prices)
+    print(f"The customer gives you ")
+    while True:
+        choice = input ('What pizza did the customer order?')
+        if choice == order:
+            print (f"Correct! You've earned {Jonathan.wage} dollars!")
+            return Jonathan.wage
+        else: 
+            print ('Wrong! Try again.')
+
+    
 
 def main ():
     game = input ('Who would you like to play as? Jonathan Chan (cashier) or Yi Cheng (cook)')
