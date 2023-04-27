@@ -1,7 +1,7 @@
 import random
 
 print ("The Pizza Place")
-
+money = []
 class worker:
     def __init__(self, name, age, wage):
         self.name = name
@@ -22,7 +22,7 @@ Yi = cook ('Yi Cheng', 15, 20, 'To cook pizza for the customers.')
 
 def tips():
     tip = random.randint(0, 9)
-    print(f"The customer tipped ${tip}")
+    print(f"\nThe customer tipped ${tip}")
     return tip
 
 def cookgame():
@@ -30,7 +30,7 @@ def cookgame():
     order = random.choice(toppings)
     print(f"Your customer has ordered a {order} pizza!")
     while True:
-        choice = input('What pizza would you like to cook? ')
+        choice = input('\nWhat pizza would you like to cook? \n \n')
         if choice.lower() == order:
             tip = tips()
             print(f'Your wage is ${Yi.wage}')
@@ -51,23 +51,24 @@ def cashiergame ():
         else: 
             print ('Wrong! Try again.')
 
-def totalincome ():
+#def totalincome ():
     incomeyi =+ Yi.wage + tips()
+    money.append
     print (incomeyi)
 
-def cookcontinue ():
-    while input ('Do you want to continue? y/n ') == "y":
+def cookcontinue ():    
+    while input ('\nDo you want to continue? y/n ') == "y":
         cookgame ()
     else:
         print ("Game Over")
-        totalincome ()
 
 def main ():
     game = input ('Who would you like to play as? Jonathan Chan (cashier) or Yi Cheng (cook) ')
     if game.lower() == 'cook':
-        print ("You've chosen the cook!")
+        print ("\nYou've chosen the cook!\n ")
         cookgame ()
         cookcontinue ()
+        #totalincome ()
     else:
         print ("You've chosen the cashier!")
         cashiergame ()
