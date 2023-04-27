@@ -1,6 +1,4 @@
-toppings = ["cheese", "pepperoni","sausage"]
-prices = ["8", "10" , "12"]
-x = 0
+def totalincome ():
+    print ('5')
 
-print (toppings[x])
-print (prices[x])
+totalincome ()

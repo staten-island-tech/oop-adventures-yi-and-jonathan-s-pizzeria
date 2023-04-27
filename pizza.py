@@ -42,7 +42,7 @@ def cashiergame ():
     toppings = ["cheese", "pepperoni","sausage"]
     prices = ["8", "10" , "12"]
     order = random.choice(prices)
-    print(f"Your customer has ordered a {toppings} pizza!")
+    print(f"Your customer has ordered a {prices} pizza!")
     while True:
         choice = input ('What pizza did the customer order?')
         if choice == order:
@@ -51,12 +51,15 @@ def cashiergame ():
         else: 
             print ('Wrong! Try again.')
 
+def totalincome ():
+    print ('5')
+
 def cookcontinue ():
-    ontinue = input ('Do you want to continue? y/n ')
-    while ontinue.lower() == 'y':
-        cookgame()
+    while input ('Do you want to continue? y/n ') == "y":
+        cookgame ()
     else:
-        print ('Game Over')
+        print ("Game Over")
+        print ("You've made $asdsf")
 
 def main ():
     game = input ('Who would you like to play as? Jonathan Chan (cashier) or Yi Cheng (cook) ')
