@@ -52,14 +52,15 @@ def cashiergame ():
             print ('Wrong! Try again.')
 
 def totalincome ():
-    print ('5')
+    incomeyi =+ Yi.wage + tips()
+    print (incomeyi)
 
 def cookcontinue ():
     while input ('Do you want to continue? y/n ') == "y":
         cookgame ()
     else:
         print ("Game Over")
-        print ("You've made $asdsf")
+        totalincome ()
 
 def main ():
     game = input ('Who would you like to play as? Jonathan Chan (cashier) or Yi Cheng (cook) ')
