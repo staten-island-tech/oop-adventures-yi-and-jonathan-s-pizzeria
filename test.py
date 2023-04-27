@@ -33,8 +33,8 @@ def cookgame():
         choice = input('What pizza would you like to cook? ')
         if choice.lower() == order:
             tip = tips()
-            print(f'Your wage is ${Yi.wage}')
-            return print (f'Your total earning is for this order is ${Yi.wage + tip}')
+            print(f'You have earned ${Yi.wage}')
+            return Yi.wage + tip
         else:
             print('Wrong! Try again.')
 
@@ -51,19 +51,13 @@ def cashiergame ():
         else: 
             print ('Wrong! Try again.')
 
-def cookcontinue ():
-    ontinue = input ('Do you want to continue? y/n ')
-    while ontinue.lower() == 'y':
-        cookgame()
-    else:
-        print ('Game Over')
+    
 
 def main ():
     game = input ('Who would you like to play as? Jonathan Chan (cashier) or Yi Cheng (cook) ')
     if game.lower() == 'cook':
         print ("You've chosen the cook!")
         cookgame ()
-        cookcontinue ()
     else:
         print ("You've chosen the cashier!")
         cashiergame ()
