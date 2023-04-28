@@ -1,7 +1,7 @@
 import random
 
 print ("The Pizza Place")
-money = []
+
 class worker:
     def __init__(self, name, age, wage):
         self.name = name
@@ -22,7 +22,7 @@ Yi = cook ('Yi Cheng', 15, 20, 'To cook pizza for the customers.')
 
 def tips():
     tip = random.randint(0, 9)
-    print(f"\nThe customer tipped ${tip}")
+    print(f"The customer tipped ${tip}")
     return tip
 
 def cookgame():
@@ -30,11 +30,11 @@ def cookgame():
     order = random.choice(toppings)
     print(f"Your customer has ordered a {order} pizza!")
     while True:
-        choice = input('\nWhat pizza would you like to cook? \n \n')
+        choice = input('What pizza would you like to cook? ')
         if choice.lower() == order:
             tip = tips()
-            print(f'Your wage is ${Yi.wage}')
-            return print (f'Your total earning is for this order is ${Yi.wage + tip}')
+            print(f'You have earned ${Yi.wage}')
+            return Yi.wage + tip
         else:
             print('Wrong! Try again.')
 
@@ -42,7 +42,7 @@ def cashiergame ():
     toppings = ["cheese", "pepperoni","sausage"]
     prices = ["8", "10" , "12"]
     order = random.choice(prices)
-    print(f"Your customer has ordered a {prices} pizza!")
+    print(f"Your customer has ordered a {toppings} pizza!")
     while True:
         choice = input ('What pizza did the customer order?')
         if choice == order:
@@ -51,24 +51,13 @@ def cashiergame ():
         else: 
             print ('Wrong! Try again.')
 
-#def totalincome ():
-    incomeyi =+ Yi.wage + tips()
-    money.append
-    print (incomeyi)
-
-def cookcontinue ():    
-    while input ('\nDo you want to continue? y/n ') == "y":
-        cookgame ()
-    else:
-        print ("Game Over")
+    
 
 def main ():
     game = input ('Who would you like to play as? Jonathan Chan (cashier) or Yi Cheng (cook) ')
     if game.lower() == 'cook':
-        print ("\nYou've chosen the cook!\n ")
+        print ("You've chosen the cook!")
         cookgame ()
-        cookcontinue ()
-        #totalincome ()
     else:
         print ("You've chosen the cashier!")
         cashiergame ()
