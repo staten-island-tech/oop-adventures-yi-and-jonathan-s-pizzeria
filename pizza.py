@@ -1,7 +1,6 @@
 import random
 
 print ("The Pizza Place")
-money = []
 class worker:
     def __init__(self, name, age, wage):
         self.name = name
@@ -54,6 +53,7 @@ def cookgame():
             print('Wrong! Try again.')
 
 def cashiergame ():
+    print('\nYour shift has begun!\n')
     toppings = ["cheese", "pepperoni","sausage"]
     prices = ["8", "10" , "12"]
     order = random.choice(prices)
@@ -71,7 +71,6 @@ def main ():
     if game.lower() == 'cook':
         cookgame ()
     else:
-        print ("You've chosen the cashier!")
         cashiergame ()
 
 
