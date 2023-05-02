@@ -1,7 +1,7 @@
 import random
 
 print ("The Pizza Place")
-
+money = []
 class worker:
     def __init__(self, name, age, wage):
         self.name = name
@@ -22,21 +22,32 @@ Yi = cook ('Yi Cheng', 15, 20, 'To cook pizza for the customers.')
 
 def tips():
     tip = random.randint(0, 9)
-    print(f"The customer tipped ${tip}")
-    return tip
-
+    print(f"\nThe customer tipped ${tip}")
+    return tip   
+    
 def cookgame():
-    toppings = ["cheese", "pepperoni", "sausage"]
+    toppings = ["cheese", "pepperoni", "sausage"]   
     order = random.choice(toppings)
     print(f"Your customer has ordered a {order} pizza!")
+    
+    orderlist = []
+    
     while True:
-        choice = input('What pizza would you like to cook? ')
+        choice = input('\nWhat pizza would you like to cook? \n \n')
         if choice.lower() == order:
-            tip = tips()
+            order_earnings = Yi.wage + tips ()
             print(f'Your wage is ${Yi.wage}')
-            return print (f'Your total earning is for this order is ${Yi.wage + tip}')
-        else:
-            print('Wrong! Try again.')
+            print (f'Your total earning is for this order is ${order_earnings}')
+            orderlist.append(order_earnings)
+            choice = input('\nWould you like to continue? y/n ')
+            if choice.lower() == 'y':
+                    order = random.choice(toppings)
+                    print(f"Your customer has ordered a {order} pizza!")
+            else:
+                totalorderearnings = sum(orderlist)
+                return print (f'Your total earning for your shift is ${totalorderearnings}')
+        else: 
+            print ('Wrong! Try again or check your spelling.')
 
 def cashiergame ():
     toppings = ["cheese", "pepperoni","sausage"]
@@ -51,23 +62,17 @@ def cashiergame ():
         else: 
             print ('Wrong! Try again.')
 
-def totalincome ():
-    incomeyi =+ Yi.wage + tips()
-    print (incomeyi)
-
-def cookcontinue ():
-    while input ('Do you want to continue? y/n ') == "y":
-        cookgame ()
-    else:
-        print ("Game Over")
-        totalincome ()
-
+# def cookcontinue ():    
+#     while input ('\nDo you want to continue? y/n ') == "y" :
+#         cookgame () 
+#     else:
+#         print ('test')
 def main ():
     game = input ('Who would you like to play as? Jonathan Chan (cashier) or Yi Cheng (cook) ')
     if game.lower() == 'cook':
-        print ("You've chosen the cook!")
+        print ("\nYou've chosen the cook!\n ")
         cookgame ()
-        cookcontinue ()
+        # cookcontinue ()
     else:
         print ("You've chosen the cashier!")
         cashiergame ()
@@ -82,5 +87,5 @@ def start ():
         print ('Too bad, maybe next time')
 
 
-cookgame ()
+cookgame()
 
