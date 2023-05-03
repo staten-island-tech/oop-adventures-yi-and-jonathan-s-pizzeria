@@ -53,9 +53,9 @@ def cashiergame ():
             print (f'Your total earning for this order is ${order_earning}')
 
             orderlist.append(order_earning)
+            
 
-
-            keepplaying = input("Would you like to continue your shift? \n\n")
+            keepplaying = input("Would you like to continue your shift? y/n \n\n")
             if keepplaying.lower() == 'y':
                 print('\nCustomer: "Hello!"\n')
                 print (choice1)
