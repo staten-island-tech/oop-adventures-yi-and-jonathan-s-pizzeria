@@ -1,5 +1,7 @@
 def questions ():
 
+    question1 = 1
+    
     question1 = {
         "question": 'Customer: "Hello!"',
         "choices": ['1. "Hello! What would you like to order?"','2. "Leave the store now!"', '3. "Hey! What would you like to try today?"'],
