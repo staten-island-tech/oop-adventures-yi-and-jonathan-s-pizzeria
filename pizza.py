@@ -1,6 +1,7 @@
 import random
 
 print ("The Pizza Place")
+print ("---------------------------------------")
 class worker:
     def __init__(self, name, age, wage):
         self.name = name
@@ -47,7 +48,7 @@ def cookgame():
                 print(f"Your customer has ordered a {order} pizza!")
             else:
                 
-                total_earning = sum(orderlist)
+                total_earning = sum(orderlist)  
                 return print(f'Your total earning for your shift is ${total_earning}')
         else:
             print('Wrong! Try again.')
@@ -69,6 +70,7 @@ def cashiergame ():
 def main ():
     game = input ('\nWho would you like to play as? Jonathan Chan (cashier) or Yi Cheng (cook)\n \n')
     if game.lower() == 'cook':
+        print ('---------------------------------------')
         cookgame ()
     else:
         cashiergame ()
@@ -78,6 +80,7 @@ def start ():
     start = input ('\nDo you want to play? y/n \n \n')
     if start == 'y':
         print ('\nGet ready to work!') 
+        print ('---------------------------------------')
         main ()
     else:
         print ('Too bad, maybe next time')
