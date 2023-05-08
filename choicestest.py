@@ -20,8 +20,6 @@ Yi = cook ('Yi Cheng', 15, 20, 'To cook pizza for the customers.')
 
 def questions ():
 
-    question1 = 1
-    
     question1 = {
         "question": 'Customer: "Hello!"',
         "choices": ['1. "Hello! What would you like to order?"','2. "Leave the store now!"', '3. "Hey! What would you like to try today?"'],
@@ -39,8 +37,7 @@ def questions ():
         "answer": "1"
     }
 
-
-
+    
     # Print the question and answer choices
     print(question1["question"])
     for choice in question1["choices"]:
@@ -61,6 +58,15 @@ def questions ():
         elif user_answer == "3":
             print (f'{Jonathan.name}: "Hey! What would you like to try today?"')
         
-        
+    questions = [question1, question2, question3]
+    print ('Your question is ' + random.choice (questions))
+
+  
+
+    
+    
+
+
+
 
 questions ()
