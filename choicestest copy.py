@@ -86,18 +86,9 @@ def question3 ():
 
 
 def randomquestions ():
-    questionlist =[ question1, question2, question3]
-    generate = random.choice (questionlist)
+    questionlist =[question1 (), question2 (), question3 ()]
+    generate = random.choice(questionlist)
     print (generate)
 
-# randomquestions ()
-# def randomquestions ():
-#     questionlist = [question1, question2, question3]
-#     generate = random.choice (questionlist)
-#     print (generate)
 
-def cookgame():
-    toppings = ["cheese", "pepperoni", "sausage"]   
-    order = random.choice(toppings)
-    print (order)
 randomquestions ()
