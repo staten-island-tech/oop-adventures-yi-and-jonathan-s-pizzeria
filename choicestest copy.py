@@ -18,6 +18,11 @@ class cook (worker):
 Jonathan = cashier ('Jonathan Chan', 15, 15, 'To take orders from customers.')
 Yi = cook ('Yi Cheng', 15, 20, 'To cook pizza for the customers.')
 
+def pizzatoppings ():
+
+    toppings = ["cheese", "pepperoni", "sausage"]   
+    order = random.choice(toppings)
+    print(f'Customer: "I would like a {order} pizza!"')
 
 def question1 ():
         
@@ -34,15 +39,16 @@ def question1 ():
     user_answer = input("\nWhat will your response be? ")
 
     # Check if the answer is correct
-    if user_answer == question["answer"]:
+    while user_answer == question["answer"]:
         print (f'{Jonathan.name}: "Leave the store now!"')
-        print('Customer: "How rude! I will be taking my business elsewhere!"')
+        ('Customer: "How rude! I will be taking my business elsewhere!"')
     else:
         if user_answer == "1":
             print (f'{Jonathan.name}: "Hello! What would you like to order?"')
-            print('Customer: "I would like a blank pizza"')
+            pizzatoppings ()
         elif user_answer == "3":
             print (f'{Jonathan.name}: "Hey! What would you like to try today?"')
+            pizzatoppings ()
 def question2 ():
     question = {
     "question": 'Customer: "Hello!"',
@@ -60,9 +66,10 @@ def question2 ():
     else:
         if user_answer == "1":
             print (f'{Jonathan.name}: "Hey there! What pizza would you like to order?"')
-            print('Customer: "I would like a blank pizza"')
+            pizzatoppings ()
         elif user_answer == "2":
             print (f'{Jonathan.name}: "Welcome to The Pizza Place! How may I help you?"')
+            pizzatoppings ()
 def question3 ():
     question = {
     "question": 'Customer: "Hello!"',
@@ -80,14 +87,15 @@ def question3 ():
     else:
         if user_answer == "2":
             print (f'{Jonathan.name}: "Hello, my name is Jonathan. What would you like to order?"')
-            print('Customer: "I would like a blank pizza"')
+            pizzatoppings ()
         elif user_answer == "3":
             print (f'{Jonathan.name}: "Welcome to The Pizza Place! Take a order prease?"')
+            pizzatoppings ()
 
 
 def randomquestions ():
     questionlist =[question1 (), question2 (), question3 ()]
-    generate = random.choice(questionlist)
+    generate = random.random(questionlist)
     print (generate)
 
 
