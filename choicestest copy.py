@@ -18,6 +18,11 @@ class cook (worker):
 Jonathan = cashier ('Jonathan Chan', 15, 15, 'To take orders from customers.')
 Yi = cook ('Yi Cheng', 15, 20, 'To cook pizza for the customers.')
 
+def tips():
+    tip = random.randint(0, 9)
+    print(f"\nThe customer tipped ${tip}")
+    return tip   
+
 def pizzatoppings ():
 
     toppings = ["cheese", "pepperoni", "sausage"]   
@@ -34,11 +39,8 @@ def question1 ():
     for choice in question["choices"]:
         print(choice)
 
-    
-    # Ask the user to select an answer
     user_answer = input("\nWhat will your response be? ")
 
-    # Check if the answer is correct
     while user_answer == question["answer"]:
         print (f'{Jonathan.name}: "Leave the store now!"')
         ('Customer: "How rude! I will be taking my business elsewhere!"')
@@ -97,6 +99,21 @@ def randomquestions ():
     questionlist =[question1 (), question2 (), question3 ()]
     generate = random.random(questionlist)
     print (generate)
+    orderlist = []
+    while generate == True:
+        order_earning = Jonathan.wage + tips ()
+        print(f'Your wage is ${Jonathan.wage}')
+        print (f'Your total earning for this order is ${order_earning}')
+        orderlist.append(order_earning)
+            
+        choice = input('\nWould you like to continue your shift? y/n \n \n')
+        if choice.lower() == 'y':
+            print (pizzatoppings)
+        else:
+            total_earning = sum(orderlist)  
+            return print(f'Your total earning for your shift is ${total_earning}')
+        
+
 
 
 randomquestions ()
