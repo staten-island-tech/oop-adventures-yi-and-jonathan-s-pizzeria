@@ -84,7 +84,7 @@ def start ():
         print ('Get ready to work!') 
         main ()
     else:
-        print ('Too bad, maybe next time')
+        print ('Too bad, maybe next time...')
 
 
 cookgame()
