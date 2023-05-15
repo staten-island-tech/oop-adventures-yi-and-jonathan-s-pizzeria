@@ -97,7 +97,7 @@ def question3 ():
 
 def randomquestions ():
     questionlist =[question1 (), question2 (), question3 ()]
-    generate = random.random(questionlist)
+    generate = random.choice(questionlist)
     print (generate)
     orderlist = []
     while generate == True:
@@ -116,4 +116,5 @@ def randomquestions ():
 
 
 
-randomquestions ()
+#randomquestions ()
+question1 ()
