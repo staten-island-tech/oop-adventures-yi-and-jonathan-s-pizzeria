@@ -39,11 +39,13 @@ def cookgame():
     orderlist = []
     
     while True:
-        choice = input('\nWhat pizza would you like to cook? \n \n')
-        if choice.lower() == order:
-            steps = input ('What would you like to start with?\n\nDough\n\nSauce\n\nCheese\n')
-            if steps == 'Dough':
-                print ('test')
+        step1 = input ('\nWhat would you like to start with?\n\nDough\n\nSauce\n\nCheese\n\n')
+        if step1.lower() == 'y':
+            step2 = input ('What would you like to do next?')
+            if step2.lower () == ('n'):
+                    return print ('balls')
+        else:
+            return print ('weiner')
             
         #     sprint(f'\nYour wage is ${Yi.wage}')
         #     order_earning = Yi.wage + tips ()
