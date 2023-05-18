@@ -40,12 +40,28 @@ def cookgame():
     
     while True:
         step1 = input ('\nWhat would you like to start with?\n\nDough\n\nSauce\n\nCheese\n\n')
-        if step1.lower() == 'y':
-            step2 = input ('What would you like to do next?')
-            if step2.lower () == ('n'):
-                    return print ('balls')
+        if step1.lower() == 'dough':
+            step2 = input ('\nWhat would you like to do next?\n\n')
+            if step2.lower () == ('sauce'):
+                step3 = input ('\nWhat would you like to do next?\n\n')
+                if step3.lower () == ('cheese'):
+                    print ('\nCongrats!')
+                    print(f'\nYour wage is ${Yi.wage}')
+                    order_earning = Yi.wage + tips ()
+                    sprint (f'\nYour total earning for this order is ${order_earning}')
+
+                    orderlist.append(order_earning)
+
+                    choice = input('\nWould you like to continue your shift? y/n \n \n')
+                    if choice.lower() == 'y':
+                        order = random.choice(toppings)
+                        sprint(f"Your customer has ordered a {order} pizza!")
+                    else:
+                        
+                        total_earning = sum(orderlist)  
+                        return sprint(f'\nYour total earning for your shift is ${total_earning}')
         else:
-            return print ('weiner')
+            return print ('Wrong! Try again!')
             
         #     sprint(f'\nYour wage is ${Yi.wage}')
         #     order_earning = Yi.wage + tips ()
