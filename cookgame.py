@@ -45,21 +45,21 @@ def cookgame():
             if steps == 'Dough':
                 print ('test')
             
-        #     sprint(f'\nYour wage is ${Yi.wage}')
-        #     order_earning = Yi.wage + tips ()
-        #     sprint (f'\nYour total earning for this order is ${order_earning}')
+            sprint(f'\nYour wage is ${Yi.wage}')
+            order_earning = Yi.wage + tips ()
+            sprint (f'\nYour total earning for this order is ${order_earning}')
             
-        #     orderlist.append(order_earning)
+            orderlist.append(order_earning)
             
-        #     choice = input('\nWould you like to continue your shift? y/n \n \n')
-        #     if choice.lower() == 'y':
-        #         order = random.choice(toppings)
-        #         sprint(f"Your customer has ordered a {order} pizza!")
-        #     else:
+            choice = input('\nWould you like to continue your shift? y/n \n \n')
+            if choice.lower() == 'y':
+                order = random.choice(toppings)
+                sprint(f"Your customer has ordered a {order} pizza!")
+            else:
                 
-        #         total_earning = sum(orderlist)  
-        #         return sprint(f'\nYour total earning for your shift is ${total_earning}')
-        # else:
-        #     sprint('Wrong! Try again.')
+                total_earning = sum(orderlist)  
+                return sprint(f'\nYour total earning for your shift is ${total_earning}')
+        else:
+            sprint('Wrong! Try again.')
 
 cookgame ()

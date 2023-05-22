@@ -45,23 +45,30 @@ def cookgame():
             if step2.lower () == ('sauce'):
                 step3 = input ('\nWhat would you like to do next?\n\n')
                 if step3.lower () == ('cheese'):
-                    print ('\nCongrats!')
-                    print(f'\nYour wage is ${Yi.wage}')
-                    order_earning = Yi.wage + tips ()
-                    sprint (f'\nYour total earning for this order is ${order_earning}')
+                    step4 = ('\nWould you like to add a topping?\n')
+                    if "pepperoni" and "sausage" in order: 
+                        if step4 == "pepperoni" or "sausauge":
+                            print ('congrats!')
+                            print ('\nCongrats!')
+                            print(f'\nYour wage is ${Yi.wage}')
+                            order_earning = Yi.wage + tips ()
+                            sprint (f'\nYour total earning for this order is ${order_earning}')
 
-                    orderlist.append(order_earning)
+                    
 
-                    choice = input('\nWould you like to continue your shift? y/n \n \n')
-                    if choice.lower() == 'y':
-                        order = random.choice(toppings)
-                        sprint(f"Your customer has ordered a {order} pizza!")
-                    else:
-                        
-                        total_earning = sum(orderlist)  
-                        return sprint(f'\nYour total earning for your shift is ${total_earning}')
+                            orderlist.append(order_earning)
+
+                            choice = input('\nWould you like to continue your shift? y/n \n \n')
+                            if choice.lower() == 'y':
+                                order = random.choice(toppings)
+                                sprint(f"Your customer has ordered a {order} pizza!")
+                            else:
+                                
+                                total_earning = sum(orderlist)  
+                                return sprint(f'\nYour total earning for your shift is ${total_earning}')
         else:
             return print ('Wrong! Try again!')
+            
             
         #     sprint(f'\nYour wage is ${Yi.wage}')
         #     order_earning = Yi.wage + tips ()
