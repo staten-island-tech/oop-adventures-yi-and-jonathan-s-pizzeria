@@ -85,12 +85,27 @@ def main ():
 
 
 def start ():
-    start = input ('\nDo you want to play? y/n \n \n')
-    if start == 'y':
+    sprint ('\nDo you want to play?\n \n'"1. Yes, let's go! \n\n2. No, this game sucks.\n")
+    answer = input ('Enter a response: ') 
+    sprint (answer)
+    if answer == '1':
         sprint ('\nGet ready to work!') 
         print ('---------------------------------------')
         main ()
+    
     else:
-        sprint ('Too bad, maybe next time')
+        sprint ('\nAre you sure??\n\n1. Yes, I am sure!\n\n2. No... on second thought...\n')
+        answer2 = input ('Enter a response: ')
+        if answer2 == '1':
+            sprint ('\nToo bad, maybe next time.')
+        else:
+            sprint ('\nDo you want to play?\n \n'"1. Yes, let's go! \n\n2. No, this game sucks.\n\n")
+            answer = input ('Enter a response:') 
+            sprint (answer)
+            
+            sprint ('\nGet ready to work!') 
+            print ('---------------------------------------')
+            main ()
+
 
 start ()
