@@ -1,14 +1,7 @@
-import sys,time
 import random
 
-def sprint(str):
-   for c in str + '\n':
-     sys.stdout.write(c)
-     sys.stdout.flush()
-     time.sleep(3./150)
-
 print ("The Pizza Place")
-print ("---------------------------------------")
+print ("-------------------------------------")
 class worker:
     def __init__(self, name, age, wage):
         self.name = name
@@ -29,37 +22,36 @@ Yi = cook ('Yi Cheng', 15, 20, 'To cook pizza for the customers.')
 
 def tips():
     tip = random.randint(0, 9)
-    sprint(f"\nThe customer tipped ${tip}")
     return tip   
     
 def cookgame():
     toppings = ["cheese", "pepperoni", "sausage"]   
+    print(f"\nThe customer tipped ${tip}")
     order = random.choice(toppings)
-    sprint('\nYour shift has begun!\n')
-    sprint(f"Your customer has ordered a {order} pizza!")
+    print('\nYour shift has begun!\n')
+    print(f"Your customer has ordered a {order} pizza!")
     
     orderlist = []
     
     while True:
-        choice = input('\nWhat pizza would you like to cook? \n \n')
+        choice = input('What pizza would you like to cook? \n \n')
         if choice.lower() == order:
-            
-            sprint(f'\nYour wage is ${Yi.wage}')
             order_earning = Yi.wage + tips ()
-            sprint (f'\nYour total earning for this order is ${order_earning}')
+            print(f'Your wage is ${Yi.wage}')
+            print (f'Your total earning for this order is ${order_earning}')
             
             orderlist.append(order_earning)
             
             choice = input('\nWould you like to continue your shift? y/n \n \n')
             if choice.lower() == 'y':
                 order = random.choice(toppings)
-                sprint(f"Your customer has ordered a {order} pizza!")
+                print(f"Your customer has ordered a {order} pizza!")
             else:
                 
                 total_earning = sum(orderlist)  
-                return sprint(f'\nYour total earning for your shift is ${total_earning}')
+                return print(f'Your total earning for your shift is ${total_earning}')
         else:
-            sprint('Wrong! Try again.')
+            print('Wrong! Try again.')
 
 def cashiergame ():
     print('\nYour shift has begun!\n')
@@ -76,9 +68,9 @@ def cashiergame ():
             print ('Wrong! Try again.')
 
 def main ():
-    game = input('\nWho would you like to play as? Jonathan Chan (cashier) or Yi Cheng (cook)\n \n')
+    game = input ('\nWho would you like to play as? Jonathan Chan (cashier) or Yi Cheng (cook)\n \n')
     if game.lower() == 'cook':
-        print ('---------------------------------------')
+        print ('--------------------------------------')
         cookgame ()
     else:
         cashiergame ()
@@ -87,10 +79,12 @@ def main ():
 def start ():
     start = input ('\nDo you want to play? y/n \n \n')
     if start == 'y':
-        sprint ('\nGet ready to work!') 
-        print ('---------------------------------------')
+        print ('\nGet ready to work!') 
+        print ('--------------------------------------')
         main ()
     else:
-        sprint ('Too bad, maybe next time')
+        print ('Too bad, maybe next time')
+
 
 start ()
+
