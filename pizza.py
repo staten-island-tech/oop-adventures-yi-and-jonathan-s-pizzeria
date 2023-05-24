@@ -1,4 +1,5 @@
 import random
+import sys,time
 
 print ("The Pizza Place")
 print ("-------------------------------------")
@@ -17,41 +18,53 @@ class cook (worker):
         super().__init__(name, age, wage)
         self.job = job
 
+def sprint(str):
+   for c in str + '\n':
+     sys.stdout.write(c)
+     sys.stdout.flush()
+     time.sleep(3./150)
+
+
 Jonathan = cashier ('Jonathan Chan', 15, 15, 'To take orders from customers.')
 Yi = cook ('Yi Cheng', 15, 20, 'To cook pizza for the customers.')
 
 def tips():
     tip = random.randint(0, 9)
+    sprint(f"\nThe customer tipped ${tip}")
     return tip   
     
 def cookgame():
-    toppings = ["cheese", "pepperoni", "sausage"]   
-    print(f"\nThe customer tipped ${tip}")
+    toppings = ["cheese", "pepperoni", "sausage"]       
     order = random.choice(toppings)
-    print('\nYour shift has begun!\n')
-    print(f"Your customer has ordered a {order} pizza!")
+    sprint('\nYour shift has begun!\n')
+    sprint(f"Your customer has ordered a {order} pizza!")
     
     orderlist = []
     
     while True:
-        choice = input('What pizza would you like to cook? \n \n')
+        print ('\nWhat pizza would you like to cook?  \n')
+        choice = input ('Enter a response: ')
         if choice.lower() == order:
+            sprint ("\nYou've cooked a " + choice + " pizza!\n")
+            sprint ('Customer: "Thank you! I love a good ' + choice + ' pizza!" \n')
+            sprint(f'Your wage is ${Yi.wage}')
             order_earning = Yi.wage + tips ()
-            print(f'Your wage is ${Yi.wage}')
-            print (f'Your total earning for this order is ${order_earning}')
+            sprint (f'\nYour total earning for this order is ${order_earning}')
             
             orderlist.append(order_earning)
             
-            choice = input('\nWould you like to continue your shift? y/n \n \n')
-            if choice.lower() == 'y':
+            print ('\nWould you like to continue your shift?\n\n1. Yes\n\n2. No \n ')
+            choice = input ('Enter a response: ')
+            if choice.lower() == '1':
                 order = random.choice(toppings)
-                print(f"Your customer has ordered a {order} pizza!")
+                sprint(f"Your customer has ordered a {order} pizza!")
             else:
                 
                 total_earning = sum(orderlist)  
-                return print(f'Your total earning for your shift is ${total_earning}')
+                return sprint(f'\nYour total earning for your shift is ${total_earning}')
         else:
-            print('Wrong! Try again.')
+            sprint ("\nYou've cooked a " + choice + " pizza!\n")
+            sprint ("Customer: I didn't order a " + choice + " pizza, you idiot!")
 
 def cashiergame ():
     print('\nYour shift has begun!\n')
@@ -68,8 +81,9 @@ def cashiergame ():
             print ('Wrong! Try again.')
 
 def main ():
-    game = input ('\nWho would you like to play as? Jonathan Chan (cashier) or Yi Cheng (cook)\n \n')
-    if game.lower() == 'cook':
+    sprint ('\nChoose your character! \n\n1. Jonathan Chan (cashier) \n\n2. Yi Cheng (cook)\n')
+    game = input ('Enter a response: ')
+    if game == '2':
         print ('--------------------------------------')
         cookgame ()
     else:
@@ -79,7 +93,6 @@ def main ():
 def start ():
     sprint ('\nDo you want to play?\n \n'"1. Yes, let's go! \n\n2. No, this game sucks.\n")
     answer = input ('Enter a response: ') 
-    sprint (answer)
     if answer == '1':
         sprint ('\nGet ready to work!') 
         print ('---------------------------------------')
@@ -91,7 +104,7 @@ def start ():
         if answer2 == '1':
             sprint ('\nToo bad, maybe next time.')
         else:
-            sprint ('\nDo you want to play?\n \n'"1. Yes, let's go! \n\n2. No, this game sucks.\n\n")
+            sprint ('\nDo you want to play?\n \n'"1. Yes, let's go! \n\n2. No, this game sucks.\n")
             answer = input ('Enter a response:') 
             sprint (answer)
             
@@ -100,5 +113,6 @@ def start ():
             main ()
 
 
-start ()
+# start ()
+cookgame ()
 
