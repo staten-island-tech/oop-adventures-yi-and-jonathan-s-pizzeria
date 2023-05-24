@@ -77,23 +77,15 @@ def main ():
 
 
 def start ():
-<<<<<<< HEAD
     sprint ('\nDo you want to play?\n \n'"1. Yes, let's go! \n\n2. No, this game sucks.\n")
     answer = input ('Enter a response: ') 
     sprint (answer)
     if answer == '1':
         sprint ('\nGet ready to work!') 
         print ('---------------------------------------')
-=======
-    start = input ('\nDo you want to play? y/n \n \n')
-    if start == 'y':
-        print ('\nGet ready to work!') 
-        print ('--------------------------------------')
->>>>>>> 716b48d5579c2b5aa24a34b5adaddf0510e40c3a
         main ()
     
     else:
-<<<<<<< HEAD
         sprint ('\nAre you sure??\n\n1. Yes, I am sure!\n\n2. No... on second thought...\n')
         answer2 = input ('Enter a response: ')
         if answer2 == '1':
@@ -106,9 +98,6 @@ def start ():
             sprint ('\nGet ready to work!') 
             print ('---------------------------------------')
             main ()
-=======
-        print ('Too bad, maybe next time')
->>>>>>> 716b48d5579c2b5aa24a34b5adaddf0510e40c3a
 
 
 start ()

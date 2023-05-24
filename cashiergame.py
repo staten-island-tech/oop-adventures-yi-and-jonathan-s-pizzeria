@@ -29,10 +29,6 @@ def pizzatoppings ():
     order = random.choice(toppings)
     print(f'Customer: "I would like a {order} pizza!"')
 
-def wages ():
-    orderlist = []
-    
-
 def question1 ():
         
     question = {
@@ -45,9 +41,9 @@ def question1 ():
 
     user_answer = input("\nWhat will your response be? ")
 
-    if user_answer == question["answer"]:
+    while user_answer == question["answer"]:
         print (f'{Jonathan.name}: "Leave the store now!"')
-        print ('Customer: "How rude! I will be taking my business elsewhere!"')
+        ('Customer: "How rude! I will be taking my business elsewhere!"')
     else:
         if user_answer == "1":
             print (f'{Jonathan.name}: "Hello! What would you like to order?"')
@@ -101,10 +97,10 @@ def question3 ():
 
 def randomquestions ():
     questionlist =[question1 (), question2 (), question3 ()]
-    generate = random.shuffle(questionlist)
+    generate = random.choice(questionlist)
     print (generate)
     orderlist = []
-    if questionlist == True:
+    while generate == True:
         order_earning = Jonathan.wage + tips ()
         print(f'Your wage is ${Jonathan.wage}')
         print (f'Your total earning for this order is ${order_earning}')
@@ -120,4 +116,5 @@ def randomquestions ():
 
 
 
-randomquestions ()
+#randomquestions ()
+question1 ()

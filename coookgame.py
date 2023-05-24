@@ -42,13 +42,8 @@ def cookgame():
         step1 = input ('\nWhat would you like to start with?\n\nDough\n\nSauce\n\nCheese\n\n')
         if step1.lower() == 'dough':
             step2 = input ('\nWhat would you like to do next?\n\n')
-        else:
-            return print ('Wrong! Try again!')
-            
             if step2.lower () == ('sauce'):
                 step3 = input ('\nWhat would you like to do next?\n\n')
-            else: 
-                return print ('Wrong! Try Again!')
                 if step3.lower () == ('cheese'):
                     step4 = ('\nWould you like to add a topping?\n')
                     if "pepperoni" and "sausage" in order: 
@@ -71,7 +66,9 @@ def cookgame():
                                 
                                 total_earning = sum(orderlist)  
                                 return sprint(f'\nYour total earning for your shift is ${total_earning}')
-        
+        else:
+            return print ('Wrong! Try again!')
+            
             
         #     sprint(f'\nYour wage is ${Yi.wage}')
         #     order_earning = Yi.wage + tips ()
