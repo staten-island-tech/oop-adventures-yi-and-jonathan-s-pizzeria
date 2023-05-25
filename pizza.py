@@ -36,7 +36,7 @@ def tips():
 def cookgame():
     toppings = ["cheese", "pepperoni", "sausage"]       
     order = random.choice(toppings)
-    sprint('\nYour shift has begun!\n')
+    sprint('Your shift has begun!\n')
     sprint(f"Your customer has ordered a {order} pizza!")
     
     orderlist = []
@@ -55,19 +55,20 @@ def cookgame():
             
             print ('\nWould you like to continue your shift?\n\n1. Yes\n\n2. No \n ')
             choice = input ('Enter a response: ')
+            print ('')
             if choice.lower() == '1':
                 order = random.choice(toppings)
                 sprint(f"Your customer has ordered a {order} pizza!")
             else:
                 
                 total_earning = sum(orderlist)  
-                return sprint(f'\nYour total earning for your shift is ${total_earning}')
+                return sprint(f'Your total earning for your shift is ${total_earning}')
         else:
             sprint ("\nYou've cooked a " + choice + " pizza!\n")
             sprint ("Customer: I didn't order a " + choice + " pizza, you idiot!")
 
 def cashiergame ():
-    print('\nYour shift has begun!\n')
+    print('Your shift has begun!\n')
     toppings = ["cheese", "pepperoni","sausage"]
     prices = ["8", "10" , "12"]
     order = random.choice(prices)
@@ -81,7 +82,7 @@ def cashiergame ():
             print ('Wrong! Try again.')
 
 def main ():
-    sprint ('\nChoose your character! \n\n1. Jonathan Chan (cashier) \n\n2. Yi Cheng (cook)\n')
+    sprint ('Choose your character! \n\n1. Jonathan Chan (cashier) \n\n2. Yi Cheng (cook)\n')
     game = input ('Enter a response: ')
     if game == '2':
         print ('--------------------------------------')
@@ -91,7 +92,7 @@ def main ():
 
 
 def start ():
-    sprint ('\nDo you want to play?\n \n'"1. Yes, let's go! \n\n2. No, this game sucks.\n")
+    sprint ('Do you want to play?\n \n'"1. Yes, let's go! \n\n2. No, this game sucks.\n")
     answer = input ('Enter a response: ') 
     if answer == '1':
         sprint ('\nGet ready to work!') 
@@ -113,6 +114,6 @@ def start ():
             main ()
 
 
-# start ()
-cookgame ()
+start()
+
 

@@ -105,54 +105,19 @@ def question3 ():
 def randomquestions ():
     questionlist =[question1 (), question2 (), question3 ()]
     generate = random.choice(questionlist)
-    generate ()
+    print (generate)
     orderlist = []
-    while True:
-        order_earning = Jonathan.wage + tips ()
-        print(f'Your wage is ${Jonathan.wage}')
-        print (f'Your total earning for this order is ${order_earning}')
-        orderlist.append(order_earning)
-            
-        choice = input('\nWould you like to continue your shift? y/n \n \n')
-        if choice.lower() == 'y':
-            print (pizzatoppings)
-        else:
-            total_earning = sum(orderlist)  
-            return print(f'Your total earning for your shift is ${total_earning}')
+
+    
 
 def cookgame():
     toppings = ["cheese", "pepperoni", "sausage"]       
     order = random.choice(toppings)
-    sprint('\nYour shift has begun!\n')
-    sprint(f"Your customer has ordered a {order} pizza!")
+    print (order)
     
     orderlist = []
     
-    while True:
-        print ('\nWhat pizza would you like to cook?  \n')
-        choice = input ('Enter a response: ')
-        if choice.lower() == order:
-            sprint ("\nYou've cooked a " + choice + " pizza!\n")
-            sprint ('Customer: "Thank you! I love a good ' + choice + ' pizza!" \n')
-            sprint(f'Your wage is ${Yi.wage}')
-            order_earning = Yi.wage + tips ()
-            sprint (f'\nYour total earning for this order is ${order_earning}')
-            
-            orderlist.append(order_earning)
-            
-            print ('\nWould you like to continue your shift?\n\n1. Yes\n\n2. No \n ')
-            choice = input ('Enter a response: ')
-            if choice.lower() == '1':
-                order = random.choice(toppings)
-                sprint(f"Your customer has ordered a {order} pizza!")
-            else:
-                
-                total_earning = sum(orderlist)  
-                return sprint(f'\nYour total earning for your shift is ${total_earning}')
-        else:
-            sprint ("\nYou've cooked a " + choice + " pizza!\n")
-            sprint ("Customer: I didn't order a " + choice + " pizza, you idiot!")
-        
 
-
+#cookgame()
 randomquestions ()
+
