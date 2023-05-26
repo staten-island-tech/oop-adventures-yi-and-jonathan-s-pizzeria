@@ -36,18 +36,12 @@ def questions ():
         "choices": ['1. "Hello valued customer! How would you like to LEAVE!"','2. "Hello, my name is Jonathan. What would you like to order?"', '3. "Welcome to The Pizza Place! Take a order prease?"'],
         "answer": "1"
     }
-
-    
-    # Print the question and answer choices
     print(question1["question"])
     for choice in question1["choices"]:
         print(choice)
 
-    
-    # Ask the user to select an answer
     user_answer = input("\nWhat will your response be? ")
 
-    # Check if the answer is correct
     if user_answer == question1["answer"]:
         print (f'{Jonathan.name}: "Leave the store now!"')
         print('Customer: "How rude! I will be taking my business elsewhere!"')
@@ -60,13 +54,5 @@ def questions ():
         
     questions = [question1, question2, question3]
     print ('Your question is ' + random.choice (questions))
-
-  
-
-    
-    
-
-
-
 
 questions ()
