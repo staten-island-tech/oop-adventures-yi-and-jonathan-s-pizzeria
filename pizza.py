@@ -1,7 +1,8 @@
 import random
+import sys,time
 
 print ("The Pizza Place")
-print ("---------------------------------------")
+print ("-------------------------------------")
 class worker:
     def __init__(self, name, age, wage):
         self.name = name
@@ -17,44 +18,57 @@ class cook (worker):
         super().__init__(name, age, wage)
         self.job = job
 
+def sprint(str):
+   for c in str + '\n':
+     sys.stdout.write(c)
+     sys.stdout.flush()
+     time.sleep(3./150)
+
+
 Jonathan = cashier ('Jonathan Chan', 15, 15, 'To take orders from customers.')
 Yi = cook ('Yi Cheng', 15, 20, 'To cook pizza for the customers.')
 
 def tips():
     tip = random.randint(0, 9)
-    print(f"\nThe customer tipped ${tip}")
+    sprint(f"\nThe customer tipped ${tip}")
     return tip   
     
 def cookgame():
-    toppings = ["cheese", "pepperoni", "sausage"]   
+    toppings = ["cheese", "pepperoni", "sausage"]       
     order = random.choice(toppings)
-    print('\nYour shift has begun!\n')
-    print(f"Your customer has ordered a {order} pizza!")
+    sprint('Your shift has begun!\n')
+    sprint(f"Your customer has ordered a {order} pizza!")
     
     orderlist = []
     
     while True:
-        choice = input('What pizza would you like to cook? \n \n')
-        if choice.lower() == order: 
+        print ('\nWhat pizza would you like to cook?  \n')
+        choice = input ('Enter a response: ')
+        if choice.lower() == order:
+            sprint ("\nYou've cooked a " + choice + " pizza!\n")
+            sprint ('Customer: "Thank you! I love a good ' + choice + ' pizza!" \n')
+            sprint(f'Your wage is ${Yi.wage}')
             order_earning = Yi.wage + tips ()
-            print(f'Your wage is ${Yi.wage}')
-            print (f'Your total earning for this order is ${order_earning}')
+            sprint (f'\nYour total earning for this order is ${order_earning}')
             
             orderlist.append(order_earning)
             
-            choice = input('\nWould you like to continue your shift? y/n \n \n')
-            if choice.lower() == 'y':
+            print ('\nWould you like to continue your shift?\n\n1. Yes\n\n2. No \n ')
+            choice = input ('Enter a response: ')
+            print ('')
+            if choice.lower() == '1':
                 order = random.choice(toppings)
-                print(f"Your customer has ordered a {order} pizza!")
+                sprint(f"Your customer has ordered a {order} pizza!")
             else:
                 
                 total_earning = sum(orderlist)  
-                return print(f'Your total earning for your shift is ${total_earning}')
+                return sprint(f'Your total earning for your shift is ${total_earning}')
         else:
-            print('Wrong! Try again.')
+            sprint ("\nYou've cooked a " + choice + " pizza!\n")
+            sprint ("Customer: I didn't order a " + choice + " pizza, you idiot!")
 
 def cashiergame ():
-    print('\nYour shift has begun!\n')
+    print('Your shift has begun!\n')
     toppings = ["cheese", "pepperoni","sausage"]
     prices = ["8", "10" , "12"]
     order = random.choice(prices)
@@ -68,23 +82,36 @@ def cashiergame ():
             print ('Wrong! Try again.')
 
 def main ():
-    game = input ('\nWho would you like to play as? Jonathan Chan (cashier) or Yi Cheng (cook)\n \n')
-    if game.lower() == 'cook':
-        print ('---------------------------------------')
+    sprint ('Choose your character! \n\n1. Jonathan Chan (cashier) \n\n2. Yi Cheng (cook)\n')
+    game = input ('Enter a response: ')
+    if game == '2':
+        print ('--------------------------------------')
         cookgame ()
     else:
         cashiergame ()
 
 
 def start ():
-    start = input ('\nDo you want to play? y/n \n \n')
-    if start == 'y':
-        print ('\nGet ready to work!') 
+    sprint ('Do you want to play?\n \n'"1. Yes, let's go! \n\n2. No, this game sucks.\n")
+    answer = input ('Enter a response: ') 
+    if answer == '1':
+        sprint ('\nGet ready to work!') 
         print ('---------------------------------------')
         main ()
+    
     else:
-        print ('Too bad, maybe next time')
+        sprint ('\nAre you sure??\n\n1. Yes, I am sure!\n\n2. No... on second thought...\n')
+        answer2 = input ('Enter a response: ')
+        if answer2 == '1':
+            sprint ('\nToo bad, maybe next time.')
+        else:
+            sprint ('\nDo you want to play?\n \n'"1. Yes, let's go! \n\n2. No, this game sucks.\n")
+            answer = input ('Enter a response:') 
+            sprint (answer)
+            
+            sprint ('\nGet ready to work!') 
+            print ('---------------------------------------')
+            main ()
 
 
-start ()
-
+start()
