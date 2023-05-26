@@ -42,12 +42,13 @@ def tips():
     return tip  
 
 def questions ():
+    print ("-------------------------------------")
     options = [
         {
             "dialogue": 'Customer: "Hello!"\n',
             "choices": [
                 '1. "Hello! What would you like to order?"\n',
-                '2. "What do you want?"\n',
+                '2. "What do you want, butt-face?"\n',
                 '3. "We don\'t like your kind around here! Skedaddle!"\n'
             ],
             "correct_choice": 1
@@ -72,28 +73,29 @@ def questions ():
         }
     ]
     customerresponses =[
-        'Customer: "How rude! I will be taking my business elsewhere!"',
-        'Customer: "Where is your manager?"',
-        'Customer: "All I wanted was a pizza..."'
+        '\nCustomer: "How rude! I will be taking my business elsewhere!"',
+        '\nCustomer: "Where is your manager?"',
+        '\nCustomer: "All I wanted was a pizza..."'
     ]
     selected_option = random.choice(options)
     print(selected_option["dialogue"])
     for choice in selected_option["choices"]:
         print(choice)
     
+    order_list = []
 
     user_choice = input("Enter a response: ")
-    print ('\n')
 
     if user_choice == str(selected_option["correct_choice"]):
-        print("Congratulations! The customer is satfisfied!\n")
+        print ("-------------------------------------")
+        print("\nCongratulations! The customer is satfisfied!\n")
         print(f'Your wage is ${Yi.wage}')
-        order_list = []
+
         order_earning = Yi.wage + tips ()
-        print (f'\nYour total earning for this order is ${order_earning}\n')
+        print (f'\nYour total earning for this order is ${order_earning}')
 
         order_list.append (order_earning)
-
+        print ("-------------------------------------")
         print ('Would you like to continue your shift?\n')
         print ('1. Yes\n\n2. No\n')
         continue_game = input("Enter a response: ")
