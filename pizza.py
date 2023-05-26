@@ -35,7 +35,7 @@ def cookgame():
     
     while True:
         choice = input('What pizza would you like to cook? \n \n')
-        if choice.lower() == order:
+        if choice.lower() == order: 
             order_earning = Yi.wage + tips ()
             print(f'Your wage is ${Yi.wage}')
             print (f'Your total earning for this order is ${order_earning}')

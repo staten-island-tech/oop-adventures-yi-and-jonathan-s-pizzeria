@@ -19,6 +19,11 @@ Jonathan = cashier ('Jonathan Chan', 15, 15, 'To take orders from customers.')
 Yi = cook ('Yi Cheng', 15, 20, 'To cook pizza for the customers.')
 
 
+def tips():
+    tip = random.randint(0, 9)
+    print(f"\nThe customer tipped ${tip}")
+    return tip  
+
 def question1 ():
         
     question = {
