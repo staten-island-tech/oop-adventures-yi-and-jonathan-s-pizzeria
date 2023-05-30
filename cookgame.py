@@ -21,7 +21,7 @@ def sprint(str):
    for c in str + '\n':
      sys.stdout.write(c)
      sys.stdout.flush()
-     time.sleep(3./150)
+     time.sleep(3./250)
 
 Jonathan = cashier ('Jonathan Chan', 15, 15, 'To take orders from customers.')
 Yi = cook ('Yi Cheng', 15, 20, 'To cook pizza for the customers.')
@@ -47,9 +47,11 @@ def game():
             time.sleep(2)
             sprint ("\nYou've cooked a " + choice + " pizza!\n")
             sprint ('Customer: "Thank you! I love a good ' + choice + ' pizza!" \n')
+            print ("-" * 48)
             sprint(f'Your wage is ${Yi.wage}')
             order_earning = Yi.wage + tips ()
             sprint (f'\nYour total earning for this order is ${order_earning}')
+            ("-" * 48)
             
             orderlist.append(order_earning)
             
@@ -63,10 +65,21 @@ def game():
                 
                 total_earning = sum(orderlist)  
                 sprint(f'Your total earning for your shift is ${total_earning}')
+                print ("-" * 48)
+                print ('Options\n')
+                sprint ('1. Play Again\n\n2. Main Menu\n')
+                restart = input ('Enter a reponse: ')
+                print ('')
+                if restart == '1':
+                    print ("-" * 48)
+                    pizza.select()
+                else: 
+                    print ("-" * 48)
+                    pizza.start ()
                 if total_earning > 200:
                     print ('\nWow, you really have no life. You\'ve played a high school student\'s crappy game for this long? Shame.')
                     break
-                else: break
+                break
         else:
             sprint ("\nYou've cooked a " + choice + " pizza!\n")
             sprint ("Customer: I didn't order a " + choice + " pizza, you idiot!")

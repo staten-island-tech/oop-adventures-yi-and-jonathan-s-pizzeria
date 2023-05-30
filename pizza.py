@@ -22,7 +22,7 @@ def sprint(str):
    for c in str + '\n':
      sys.stdout.write(c)
      sys.stdout.flush()
-     time.sleep(3./150)
+     time.sleep(3./250)
 
 
 
@@ -83,12 +83,13 @@ def start ():
         sprint ('Director:                              Yi Cheng\n')
         sprint ('Lead Gameplay Designer:                Yi Cheng\n')
         sprint ('Design and Scripting:                  Yi Cheng\n')
-        sprint ('Emotional Support:                     Jonathan Chan\n')
+        sprint ('Emotional Support:                     Jonathan Chan')
+        sprint ("-" * 48)
         sprint ('1. Main Menu\n\n2. Quit Game\n')
         choice = input ('Enter a response: ')
         if choice == '1':
-            start ()
             print ("-" * 48)
+            start ()
         else: 
             print ("-" * 48)
             sprint ('Thank you for playing City Pizza™!\n')
