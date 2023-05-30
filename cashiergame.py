@@ -1,5 +1,6 @@
 import random
 import sys, time
+import pizza
 
 class worker:
     def __init__(self, name, age, wage):
@@ -30,129 +31,117 @@ def tips():
     print(f"\nThe customer tipped ${tip}")
     return tip   
 
-def pizzatoppings ():
+def game ():
+    options = [
+        {
+            "dialogue": 'Customer: "Hello!"\n',
+            "choices": [
+                '1. "Hello! What would you like to order?"\n',
+                '2. "What do you want, butt-face?"\n',
+                '3. "We don\'t like your kind around here! Skedaddle!"\n'
+            ],
+            "correct_choice": 1
+        },
+        {
+            "dialogue": 'Customer: "So many options..."\n',
+            "choices": [
+                '1. "Leave the store please, your face is unpleasing."\n',
+                '2. "Stop bothering me."\n',
+                '3. "Hey there, what pizza would you like to order?"\n'
+            ],
+            "correct_choice": 3
+        },
+        {
+            "dialogue": 'Customer: "Hey! Lemme just think about what I want."\n',
+            "choices": [
+                '1. "I don\'t get paid enough to deal with people like you"\n',
+                '2. "Take your time, valued customer!"\n',
+                '3. "I don\'t have time... Chop chop buddy!."\n'
+            ],
+            "correct_choice": 2
+        },
+        {
+            "dialogue": 'Customer: "How\'s it going man! I would like to place an order."\n',
+            "choices": [
+                '1. "Of course! What would you like to try today?"\n',
+                '2. "You look like you have ate too much pizza, man. I think you should lay it off."\n',
+                '3. "How would you like to leave?."\n'
+            ],
+            "correct_choice": 1
+        },
+        {
+            "dialogue": 'Customer: "Herro! Is this City Pizza?"\n',
+            "choices": [
+                '1. "You are not South Park."\n',
+                '2. "Herro! City Pizza! Take a order prease?"\n',
+                '3. "Do your parents love you?"\n'
+            ],
+            "correct_choice": 2
+        },
+        {
+            "dialogue": 'Customer: "Hey pretty boy!"\n',
+            "choices": [
+                '1. "Pervert!"\n',
+                '2. "Don\'t talk to me with that disrespect."\n',
+                '3. "Hey... weird response but... what like you like to order..?"\n'
+            ],
+            "correct_choice": 3
+        }
+    ]
+    customerresponses =[
+        '\nCustomer: "How rude! I will be taking my business elsewhere!"',
+        '\nCustomer: "Where is your manager?"',
+        '\nCustomer: "All I wanted was a pizza..."',
+        '\nCustomer: "Meet me outside. I\'m going to knock your ass out."',
+        '\nCustomer: "Is that any way you talk to a valued customer?"'
 
-    toppings = ["cheese", "pepperoni", "sausage"]   
-    order = random.choice(toppings)
-    print(f'Customer: "I would like a {order} pizza!"')
-
-def question1 ():
+    ]
+    
+    order_list = []
+    while True:
+        selected_option = random.choice(options)
+        print(selected_option["dialogue"])
+        for choice in selected_option["choices"]:
+            print(choice)
         
-    question = {
-    "question": 'Customer: "Hello!"',
-    "choices": ['1. "Hello! What would you like to order?"','2. "Leave the store now!"', '3. "Hey! What would you like to try today?"'],
-     "answer": "2" }
-    print(question["question"])
-    for choice in question["choices"]:
-        print(choice)
+        
 
-    user_answer = input("\nWhat will your response be? ")
+        user_choice = input("Enter a response: ")
 
-    while user_answer == question["answer"]:
-        print (f'{Jonathan.name}: "Leave the store now!"')
-        ('Customer: "How rude! I will be taking my business elsewhere!"')
-    else:
-        if user_answer == "1":
-            print (f'{Jonathan.name}: "Hello! What would you like to order?"')
-            pizzatoppings ()
-        elif user_answer == "3":
-            print (f'{Jonathan.name}: "Hey! What would you like to try today?"')
-            pizzatoppings ()
-def question2 ():
-    question = {
-    "question": 'Customer: "Hello!"',
-    "choices": ['1. "Hey there! What pizza would you like to order?"','2. "Welcome to The Pizza Place! How may I help you?"', '3. "Skedaddle outta here! We do not like you!"'],
-    "answer": "3"
-    }
-    print(question["question"])
-    for choice in question ["choices"]:
-        print(choice)
+        if user_choice == str(selected_option["correct_choice"]):
+            print ("-" * 48)
+            sprint("Congratulations! The customer is satfisfied!\n")
+            print(f'Your wage is ${Jonathan.wage}')
 
-    user_answer = input ("\n What will your response be?")
-    if user_answer == question["answer"]:
-        print (f'{Jonathan.name}: "Skedaddle outta here! We do not like you!"')
-        print('Customer: "How rude! I will be taking my business elsewhere!"')
-    else:
-        if user_answer == "1":
-            print (f'{Jonathan.name}: "Hey there! What pizza would you like to order?"')
-            pizzatoppings ()
-        elif user_answer == "2":
-            print (f'{Jonathan.name}: "Welcome to The Pizza Place! How may I help you?"')
-            pizzatoppings ()
-def question3 ():
-    question = {
-    "question": 'Customer: "Hello!"',
-    "choices": ['1. "Hello valued customer! How would you like to LEAVE!"','2. "Hello, my name is Jonathan. What would you like to order?"', '3. "Welcome to The Pizza Place! Take a order prease?"'],
-    "answer": "1"
-    }
-    print(question["question"])
-    for choice in question ["choices"]:
-        print(choice)
-
-    user_answer = input ("\n What will your response be?")
-    if user_answer == question["answer"]:
-        print (f'{Jonathan.name}: "Hello valued customer! How would you like to LEAVE!"')
-        print('Customer: "How rude! I will be taking my business elsewhere!"')
-    else:
-        if user_answer == "2":
-            print (f'{Jonathan.name}: "Hello, my name is Jonathan. What would you like to order?"')
-            pizzatoppings ()
-        elif user_answer == "3":
-            print (f'{Jonathan.name}: "Welcome to The Pizza Place! Take a order prease?"')
-            pizzatoppings ()
-
-
-def randomquestions ():
-    questionlist =[question1 (), question2 (), question3 ()]
-    generate = random.choice(questionlist)
-    generate ()
-    orderlist = []
-    while True:
-        order_earning = Jonathan.wage + tips ()
-        print(f'Your wage is ${Jonathan.wage}')
-        print (f'Your total earning for this order is ${order_earning}')
-        orderlist.append(order_earning)
-            
-        choice = input('\nWould you like to continue your shift? y/n \n \n')
-        if choice.lower() == 'y':
-            print (pizzatoppings)
-        else:
-            total_earning = sum(orderlist)  
-            return print(f'Your total earning for your shift is ${total_earning}')
-
-def cookgame():
-    toppings = ["cheese", "pepperoni", "sausage"]       
-    order = random.choice(toppings)
-    sprint('\nYour shift has begun!\n')
-    sprint(f"Your customer has ordered a {order} pizza!")
-    
-    orderlist = []
-    
-    while True:
-        print ('\nWhat pizza would you like to cook?  \n')
-        choice = input ('Enter a response: ')
-        if choice.lower() == order:
-            sprint ("\nYou've cooked a " + choice + " pizza!\n")
-            sprint ('Customer: "Thank you! I love a good ' + choice + ' pizza!" \n')
-            sprint(f'Your wage is ${Yi.wage}')
-            order_earning = Yi.wage + tips ()
+            order_earning = Jonathan.wage + tips ()
             sprint (f'\nYour total earning for this order is ${order_earning}')
+
+            order_list.append (order_earning)
+            print ("-" * 48)
+            sprint ('Would you like to continue your shift?\n')
+            sprint ('1. Yes\n\n2. No\n')
+            continue_game = input("Enter a response: ")
+            print ("-" * 48)
             
-            orderlist.append(order_earning)
-            
-            print ('\nWould you like to continue your shift?\n\n1. Yes\n\n2. No \n ')
-            choice = input ('Enter a response: ')
-            if choice.lower() == '1':
-                order = random.choice(toppings)
-                sprint(f"Your customer has ordered a {order} pizza!")
-            else:
-                
-                total_earning = sum(orderlist)  
-                return sprint(f'\nYour total earning for your shift is ${total_earning}')
+            if continue_game == '2':
+                total_earning = sum(order_list)  
+                sprint(f'Your total earning for your shift is ${total_earning}')
+                if total_earning > 200:
+                    print ('\nWow, you really have no life. You\'ve played a high school student\'s crappy game for this long? Shame.')
+                    break
+                else: break
         else:
-            sprint ("\nYou've cooked a " + choice + " pizza!\n")
-            sprint ("Customer: I didn't order a " + choice + " pizza, you idiot!")
-        
-
-
-randomquestions ()
+            customer = random.choice (customerresponses)
+            sprint (customer)
+            sprint ('\nGame Over!')
+            print ("-" * 48)
+            print ('Options\n')
+            sprint ('1. Continue\n\n2. Main Menu\n')
+            restart = input ('Enter a reponse: ')
+            print ('')
+            if restart == '1':
+                print ("-" * 48)
+                pizza.select()
+            else: 
+                ("-" * 48)
+                pizza.start ()

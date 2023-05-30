@@ -1,8 +1,8 @@
 import random
 import sys,time
+import cashiergame
+import cookgame
 
-print ("The Pizza Place")
-print ("-------------------------------------")
 class worker:
     def __init__(self, name, age, wage):
         self.name = name
@@ -25,93 +25,81 @@ def sprint(str):
      time.sleep(3./150)
 
 
+
 Jonathan = cashier ('Jonathan Chan', 15, 15, 'To take orders from customers.')
 Yi = cook ('Yi Cheng', 15, 20, 'To cook pizza for the customers.')
+
+def titlescreen():
+    print ("                City Pizza™\n")
+    sprint ('A Pizza Place Sim by Yi Cheng and Jonathan Chan')
+    print ("-" * 48)
 
 def tips():
     tip = random.randint(0, 9)
     sprint(f"\nThe customer tipped ${tip}")
     return tip   
     
-def cookgame():
-    toppings = ["cheese", "pepperoni", "sausage"]       
-    order = random.choice(toppings)
-    sprint('Your shift has begun!\n')
-    sprint(f"Your customer has ordered a {order} pizza!")
-    
-    orderlist = []
-    
-    while True:
-        print ('\nWhat pizza would you like to cook?  \n')
-        choice = input ('Enter a response: ')
-        if choice.lower() == order:
-            sprint ("\nYou've cooked a " + choice + " pizza!\n")
-            sprint ('Customer: "Thank you! I love a good ' + choice + ' pizza!" \n')
-            sprint(f'Your wage is ${Yi.wage}')
-            order_earning = Yi.wage + tips ()
-            sprint (f'\nYour total earning for this order is ${order_earning}')
-            
-            orderlist.append(order_earning)
-            
-            print ('\nWould you like to continue your shift?\n\n1. Yes\n\n2. No \n ')
-            choice = input ('Enter a response: ')
-            print ('')
-            if choice.lower() == '1':
-                order = random.choice(toppings)
-                sprint(f"Your customer has ordered a {order} pizza!")
-            else:
-                
-                total_earning = sum(orderlist)  
-                return sprint(f'Your total earning for your shift is ${total_earning}')
-        else:
-            sprint ("\nYou've cooked a " + choice + " pizza!\n")
-            sprint ("Customer: I didn't order a " + choice + " pizza, you idiot!")
+def cookfile():
+    cookgame.game()
 
-def cashiergame ():
-    print('Your shift has begun!\n')
-    toppings = ["cheese", "pepperoni","sausage"]
-    prices = ["8", "10" , "12"]
-    order = random.choice(prices)
-    print(f"Your customer has ordered a {prices} pizza!")
-    while True:
-        choice = input ('What pizza did the customer order?')
-        if choice == order:
-            print (f"Correct! You've earned {Jonathan.wage} dollars!")
-            return Jonathan.wage
-        else: 
-            print ('Wrong! Try again.')
+def cashierfile():
+    sprint ('Your shift has begun! \n')
+    cashiergame.game ()
+    
 
-def main ():
-    sprint ('Choose your character! \n\n1. Jonathan Chan (cashier) \n\n2. Yi Cheng (cook)\n')
+def select ():
+    sprint ('Choose your character! \n\n1. Jonathan Chan (cashier) \n\n2. Yi Cheng (cook)\n\n3. Back\n')
     game = input ('Enter a response: ')
     if game == '2':
-        print ('--------------------------------------')
-        cookgame ()
-    else:
-        cashiergame ()
-
-
+        print ("-" * 48)
+        cookfile ()
+    if game == '1':
+        print ("-" * 48)
+        cashierfile()
+    if game == '3':
+        print ("-" * 48)
+        start ()
 def start ():
-    sprint ('Do you want to play?\n \n'"1. Yes, let's go! \n\n2. No, this game sucks.\n")
+    titlescreen()
+    sprint ('1. Play\n\n2. Credits\n\n3. Quit\n')
     answer = input ('Enter a response: ') 
     if answer == '1':
-        sprint ('\nGet ready to work!') 
-        print ('---------------------------------------')
-        main ()
-    
-    else:
-        sprint ('\nAre you sure??\n\n1. Yes, I am sure!\n\n2. No... on second thought...\n')
-        answer2 = input ('Enter a response: ')
-        if answer2 == '1':
-            sprint ('\nToo bad, maybe next time.')
+        print ("-" * 48)
+        sprint ('Do you want to play?\n \n'"1. Yes, let's go! \n\n2. No, this game sucks.\n")
+        answer = input ('Enter a response: ')
+        
+        if answer == '1':
+            print ("-" * 48)
+            select ()
         else:
-            sprint ('\nDo you want to play?\n \n'"1. Yes, let's go! \n\n2. No, this game sucks.\n")
-            answer = input ('Enter a response:') 
-            sprint (answer)
-            
-            sprint ('\nGet ready to work!') 
-            print ('---------------------------------------')
-            main ()
-
-
-start()
+            print ("-" * 48)
+            start ()
+    if answer == '2':
+        print ("-" * 48)
+        sprint ('                City Pizza™                    \n')
+        sprint ('A Pizza Place Sim by Yi Cheng and Jonathan Chan\n')
+        sprint ('                  Credits                      \n')
+        sprint ('Producer:                              Yi Cheng\n')
+        sprint ('Director:                              Yi Cheng\n')
+        sprint ('Lead Gameplay Designer:                Yi Cheng\n')
+        sprint ('Design and Scripting:                  Yi Cheng\n')
+        sprint ('Emotional Support:                     Jonathan Chan\n')
+        sprint ('1. Main Menu\n\n2. Quit Game\n')
+        choice = input ('Enter a response: ')
+        if choice == '1':
+            start ()
+            print ("-" * 48)
+        else: 
+            print ("-" * 48)
+            sprint ('Thank you for playing City Pizza™!\n')
+            sprint ('Shutting down...\n')
+            time.sleep(3)
+            sprint ('Bye bye!')
+    else: 
+        print ("-" * 48)
+        sprint ('Thank you for playing City Pizza™!\n')
+        sprint ('Shutting down...\n')
+        time.sleep(3)
+        sprint ('Bye bye!')
+        
+        
