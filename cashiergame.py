@@ -135,7 +135,7 @@ def game ():
                     print ("-" * 48)
                     pizza.select()
                 else: 
-                    ("-" * 48)
+                    print ("-" * 48)
                     pizza.start ()
                 if total_earning > 200:
                     print ('\nWow, you really have no life. You\'ve played a high school student\'s crappy game for this long? Shame.')

@@ -46,12 +46,12 @@ def game():
             sprint ('\nCooking...')
             time.sleep(2)
             sprint ("\nYou've cooked a " + choice + " pizza!\n")
-            sprint ('Customer: "Thank you! I love a good ' + choice + ' pizza!" \n')
+            sprint ('Customer: "Thank you! I love a good ' + choice + ' pizza!" ')
             print ("-" * 48)
             sprint(f'Your wage is ${Yi.wage}')
             order_earning = Yi.wage + tips ()
             sprint (f'\nYour total earning for this order is ${order_earning}')
-            ("-" * 48)
+            print ("-" * 48)
             
             orderlist.append(order_earning)
             
@@ -69,7 +69,6 @@ def game():
                 print ('Options\n')
                 sprint ('1. Play Again\n\n2. Main Menu\n')
                 restart = input ('Enter a reponse: ')
-                print ('')
                 if restart == '1':
                     print ("-" * 48)
                     pizza.select()
@@ -93,5 +92,5 @@ def game():
                 print ("-" * 48)
                 pizza.select()
             else: 
-                ("-" * 48)
+                print ("-" * 48)
                 pizza.start ()
