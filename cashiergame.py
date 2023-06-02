@@ -153,6 +153,8 @@ def game ():
             if restart == '1':
                 print ("-" * 48)
                 pizza.select()
-            else: 
+                break
+            if restart == '2': 
                 print ("-" * 48)
                 pizza.start ()
+                break
