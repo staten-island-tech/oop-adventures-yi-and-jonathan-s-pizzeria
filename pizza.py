@@ -22,7 +22,7 @@ def sprint(str):
    for c in str + '\n':
      sys.stdout.write(c)
      sys.stdout.flush()
-     time.sleep(3./250)
+     time.sleep(3./150)
 
 
 
@@ -59,20 +59,6 @@ def select ():
     if game == '3':
         print ("-" * 48)
         start ()
-def credits ():
-
-    print ("-" * 48)
-    sprint ('                City Pizza™                    \n')
-    sprint ('A Pizza Place Sim by Yi Cheng and Jonathan Chan\n')
-    sprint ('                  Credits                      \n')
-    sprint ('Producer:                              Yi Cheng\n')
-    sprint ('Director:                              Yi Cheng\n')
-    sprint ('Lead Gameplay Designer:                Yi Cheng\n')
-    sprint ('Design and Scripting:                  Yi Cheng\n')
-    sprint ('Emotional Support:                     Jonathan Chan')
-    sprint ("-" * 48)
-
-    
 def start ():
     titlescreen()
     sprint ('1. Play\n\n2. Credits\n\n3. Quit\n')
@@ -85,34 +71,35 @@ def start ():
         if answer == '1':
             print ("-" * 48)
             select ()
-            
         else:
             print ("-" * 48)
-            start ()
-    
+            titlescreen()
+            sprint ('1. Play\n\n2. Credits\n\n3. Quit\n')
+            answer = input ('Enter a response: ') 
     if answer == '2':
-        credits ()
+        print ("-" * 48)
+        sprint ('                City Pizza™                    \n')
+        sprint ('A Pizza Place Sim by Yi Cheng and Jonathan Chan\n')
+        sprint ('                  Credits                      \n')
+        sprint ('Producer:                              Yi Cheng\n')
+        sprint ('Director:                              Yi Cheng\n')
+        sprint ('Lead Gameplay Designer:                Yi Cheng\n')
+        sprint ('Design and Scripting:                  Yi Cheng\n')
+        sprint ('Emotional Support:                     Jonathan Chan\n')
         sprint ('1. Main Menu\n\n2. Quit Game\n')
         choice = input ('Enter a response: ')
         if choice == '1':
-            print ("-" * 48)
             start ()
-            
+            print ("-" * 48)
         else: 
             print ("-" * 48)
             sprint ('Thank you for playing City Pizza™!\n')
             sprint ('Shutting down...\n')
-            #time.sleep(3)
+            time.sleep(3)
             sprint ('Bye bye!')
-            print ('1')
-            
-    else:
+    else: 
         print ("-" * 48)
         sprint ('Thank you for playing City Pizza™!\n')
         sprint ('Shutting down...\n')
-        #time.sleep(3)
+        time.sleep(3)
         sprint ('Bye bye!')
-        print ('2')
-
-        
-        
