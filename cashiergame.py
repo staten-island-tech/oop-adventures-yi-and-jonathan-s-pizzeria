@@ -74,14 +74,14 @@ def game ():
             "choices": [
                 '1. "You are not South Park."\n',
                 '2. "Herro! City Pizza! Take a order prease?"\n',
-                '3. "Do your parents love you?"\n'
+                '3. "Timmeh."\n'
             ],
             "correct_choice": 2
         },
         {
             "dialogue": 'Customer: "Hey pretty boy!"\n',
             "choices": [
-                '1. "Pervert!"\n',
+                '1. "Sir this is an Apple bees, im gonna need you to leave."\n',
                 '2. "Don\'t talk to me with that disrespect."\n',
                 '3. "Hey... weird response but... what like you like to order..?"\n'
             ],
