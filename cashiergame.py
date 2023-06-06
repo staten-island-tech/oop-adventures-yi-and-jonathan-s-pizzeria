@@ -63,7 +63,7 @@ def game ():
         {
             "dialogue": 'Customer: "How\'s it going man! I would like to place an order."\n',
             "choices": [
-                '1. "Of course! What would you like to try today?"\n',
+                '1. "Sure thing! What would you like to try today?"\n',
                 '2. "You look like you have ate too much pizza, man. I think you should lay it off."\n',
                 '3. "How would you like to leave?."\n'
             ],
