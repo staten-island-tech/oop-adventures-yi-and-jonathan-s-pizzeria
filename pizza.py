@@ -97,9 +97,12 @@ def start ():
             sprint ('Shutting down...\n')
             time.sleep(3)
             sprint ('Bye bye!')
-    else: 
+    if answer == '3': 
         print ("-" * 48)
         sprint ('Thank you for playing City Pizza™!\n')
         sprint ('Shutting down...\n')
         time.sleep(3)
         sprint ('Bye bye!')
+    else:
+        print ("-" * 48)
+        start ()
